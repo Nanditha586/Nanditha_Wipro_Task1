@@ -16,3 +16,12 @@ print(a.upper())
 print(a+b)
 print(b.replace("python","java"))
 print(len(a))
+
+print( 'a' in "hello world")
+print( 'o' not in "example")
+
+s2=b.split()
+print(s2)
+
+s1='I am {0} and I am {1} year old'.format("john",32)
+print(s1)
