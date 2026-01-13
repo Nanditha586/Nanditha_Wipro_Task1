@@ -13,5 +13,8 @@ b=10
 a,b=b,a
 print(a,b)
 
-
+#packing and unpacking of tuple data
+data=10,20,30
+a,b,c=data
+print(a,b,c)
 
