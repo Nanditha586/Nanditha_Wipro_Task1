@@ -1,6 +1,5 @@
-import csv
-with open("student.csv","w",newline="") as file:
-    writer=csv.writer(file)
+with open("student.csv", "w", newline="") as file:
+    writer= csv.writer(file)
     writer.writerow(["Name","Age","Gender"])
     writer.writerow(["Rose",23,'female'])
     writer.writerow(["Bob",22,'male'])
