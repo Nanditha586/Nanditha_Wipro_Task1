@@ -17,3 +17,4 @@ class employee:
         self.age=age
 e1=employee("james",'eee','male',21)
 print(e1.name,e1.dept,e1.gender,e1.age)
+

@@ -1,9 +1,28 @@
+class SalaryDescriptor:
+    def __get__(self, instance, owner):
+        return instance.__dict__.get("_salary")
+
+    def __set__(self, instance, value):
+        if value <= 0:
+            raise ValueError("Salary must be a positive number")
+        instance.__dict__["_salary"] = value
+
 class Employee:
-    def __set__(self,name,salary):
+    salary=SalaryDescriptor()
+    def __init__(self,name,salary):
         self.name=name
         self.salary=salary
-    def __get__(self,name,salary):
-        return self.salary,self.name
+    def __str__(self):
+        return f"Employee Name: {self.name}, salary: {self.salary} "
 
-class Test:
-    x
+
+emp1 = Employee("Nanditha", 50000)
+emp2 = Employee("Rahul", 65000)
+
+print(emp1)
+print(emp2)
+
+try:
+    emp3 = Employee("Anita", -30000)
+except ValueError as e:
+    print("Error:", e)

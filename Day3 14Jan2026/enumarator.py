@@ -12,3 +12,8 @@ print(color.Red.value)
 print(color.Red.name)
 print(color.Green.value)
 print(color.Blue.value)
+
+class Gender(Enum):
+    Male="m"
+    Female="f"
+print("Name=Bob ,Gender=",Gender.Female.value)

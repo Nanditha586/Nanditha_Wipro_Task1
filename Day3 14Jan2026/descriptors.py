@@ -1,30 +1,13 @@
-class SalaryDescriptor:
-    def __get__(self, instance, owner):
-        return instance.__dict__.get("_salary")
+class mydescriptor:
+    def __get__(self, obj, owner):
+        print("Getting Value")
+        return obj._x
+    def __set__(self, obj, value):
+        print("Setting the Value")
+        obj._x=value
 
-    def __set__(self, instance, value):
-        if value <= 0:
-            raise ValueError("Salary must be a positive number")
-        instance.__dict__["_salary"] = value
-
-class Employee:
-    salary=SalaryDescriptor()
-    def __init__(self,name,salary):
-        self.name=name
-        self.salary=salary
-    def __str__(self):
-        return f"Employee Name: {self.name}, salary: {self.salary} "
-
-
-# Creating valid Employee objects
-emp1 = Employee("Nanditha", 50000)
-emp2 = Employee("Rahul", 65000)
-
-print(emp1)
-print(emp2)
-
-# Attempting to assign a negative salary
-try:
-    emp3 = Employee("Anita", -30000)
-except ValueError as e:
-    print("Error:", e)
+class Test:
+    x=mydescriptor
+t=Test()
+t.x=10
+print(t.x)
