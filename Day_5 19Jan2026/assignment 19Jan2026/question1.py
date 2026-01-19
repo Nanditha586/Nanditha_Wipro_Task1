@@ -5,9 +5,11 @@ class Vehicle:
         Vehicle.vehicle_count+=1
     def start(self):
         print("this is the base class and vehicle is=",self.name)
+#single inheritance
 class Car(Vehicle):
     def starting(self):
         print("this is the starting class")
+#multiple inheritance
 class Model(Car):
     def Honda(self):
         print("this is the Honda class")
