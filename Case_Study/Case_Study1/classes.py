@@ -1,10 +1,7 @@
 from decorators import performance_time,log_execution
 from descriptors import Validate_Marks, Salary_Access
-from decorators import admin_only
 from abc import ABC,abstractmethod
-# =====================================================
-# DEPARTMENT CLASS
-# =====================================================
+#department class
 class Department:
     def __init__(self, dept_id, name):
         self.dept_id = dept_id
@@ -21,10 +18,7 @@ class Department:
 
     def add_course(self, course):
         self.courses.append(course)
-
-# =====================================================
-# ABSTRACT BASE CLASS (TYPE OF CLASS)
-# =====================================================
+#person class
 class Person(ABC):
     def __init__(self, pid, name, department):
         self.id = pid
@@ -38,9 +32,7 @@ class Person(ABC):
     def __del__(self):
         print(f"Cleaning up resources for {self.name}")
 
-# =====================================================
-# STUDENT CLASS (INHERITANCE + POLYMORPHISM)
-# =====================================================
+# student class
 class Student(Person):
     marks = Validate_Marks()
 
@@ -92,10 +84,7 @@ class Student(Person):
     # Operator overloading
     def __gt__(self, other):
         return self.calculate_performance() > other.calculate_performance()
-
-# =====================================================
-# FACULTY CLASS (HIERARCHICAL INHERITANCE)
-# =====================================================
+#Faculty class
 class Faculty(Person):
     salary = Salary_Access()
 
@@ -112,9 +101,7 @@ class Faculty(Person):
         print("Role      : Faculty")
         print(f"Department: {self.department.name}")
 
-# =====================================================
-# COURSE CLASS
-# =====================================================
+#course class
 class Course:
     def __init__(self, code, name, credits, department):
         self.code = code
