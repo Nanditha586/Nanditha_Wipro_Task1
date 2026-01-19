@@ -1,23 +1,30 @@
 class Vehicle:
-    vehicle_count=0
-    def __init__(self,name):
-        self.name=name
-        Vehicle.vehicle_count+=1
     def start(self):
-        print("this is the base class and vehicle is=",self.name)
+        print("This is base class Vehicle")
 #single inheritance
 class Car(Vehicle):
+    count=0
+    def __init__(self,name):
+        self.name=name
+        Car.count+=1
+        print("Car Name=",self.name)
+
     def starting(self):
         print("this is the starting class")
 #multiple inheritance
 class Model(Car):
-    def Honda(self):
-        print("this is the Honda class")
-v=Vehicle("Generic")
-v.start()
+    def model_name(self,name):
+        self.name=name
+        print("model of the car is=",self.name)
 
-m=Model(name="Honda")
-
+m=Model("Hyundai")
+m.start()
 m.starting()
-m.Honda()
-print("total number of vehicles=",Vehicle.vehicle_count)
+m.model_name("San")
+
+c=Model("Suzuki")
+c.start()
+c.starting()
+c.model_name("Swift")
+
+print("Count=",Car.count)
