@@ -87,8 +87,6 @@ while True:
             print("Thank you for using Smart University Management System")
             break
 
-
-
     except ValueError as ve:
         print("Invalid Marks")
         print("Error:", ve)

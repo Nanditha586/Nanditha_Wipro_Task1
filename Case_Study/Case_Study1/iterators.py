@@ -1,3 +1,4 @@
+#Iterator for course traversal
 class CourseIterator:
     def __init__(self, courses):
         self.courses = courses

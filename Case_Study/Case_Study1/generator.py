@@ -1,3 +1,4 @@
+#Generator to yield student records batch-wise
 def student_generator(students):
     print("Fetching Student Records...")
     print("--------------------------------")
