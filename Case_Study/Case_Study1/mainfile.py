@@ -16,8 +16,7 @@ while True:
     print("6 Compare Two Students")
     print("7 Generate Reports")
     print("8 Student Generator")
-    print("9 Faculty Details")
-    print("10 Exit")
+    print("9 Exit")
 
     choice = input("Enter choice: ")
 
