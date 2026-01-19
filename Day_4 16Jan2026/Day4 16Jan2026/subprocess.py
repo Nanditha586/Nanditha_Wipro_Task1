@@ -7,3 +7,4 @@ result=subprocess.run(
 )
 print(result.stdout)
 subprocess.run(("python","constructors_ex.py"))
+subprocess.run(("python","Multiple_abstract.py"))
