@@ -1,6 +1,6 @@
 import re
 text="python is powerful language"
-result=re.match("python",text)
+result=re.match("java",text)
 if result:
     print("match found")
 else:
