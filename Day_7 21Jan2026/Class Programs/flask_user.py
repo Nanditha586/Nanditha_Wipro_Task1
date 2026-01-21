@@ -31,5 +31,22 @@ def create_user():
     }
     users.append(new_user)
     return jsonify(new_user),201
+
+@app.route("/users/<int:user_id>", methods=["PUT"])
+def update_user(user_id):
+    data=request.json
+    for user in users:
+        if user["id"]==user_id:
+            user["name"]=data.get("name")
+            return jsonify(user)
+    return jsonify({"message": "user not found"}), 404
+@app.route("/users/<int:user_id>",methods=["PATCH"])
+def patch_user(user_id):
+    data=request.json
+    for user in users:
+        if user["id"]==user_id:
+            user["name"]=data.get("name")
+            return jsonify(user)
+    return jsonify({"message": "user not found"}), 404
 if __name__ == "__main__":
     app.run(debug=True)
