@@ -1,5 +1,7 @@
 import json
 import csv
+from decorators import admin_only
+@admin_only
 def save_students_json(students):
     data = []
     for s in students.values():
@@ -14,7 +16,7 @@ def save_students_json(students):
         json.dump(data, f, indent=2)
     print("Student data successfully saved to students.json")
 
-
+@admin_only
 def generate_csv_report(students):
     with open("students_report.csv", "w", newline="") as f:
         writer = csv.writer(f)

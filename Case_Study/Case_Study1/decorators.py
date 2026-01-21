@@ -11,11 +11,11 @@ def log_execution(func):
 def admin_only(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
-        role=kwargs.get("role","user")
-        if role!="admin":
+        role = kwargs.pop("role", "user")  # safely remove role
+        if role != "admin":
             print("Access Denied, Only Admin has the access right")
             return None
-        return func(*args, **kwargs)
+        return func(*args, **kwargs)  # original function unchanged
     return wrapper
 def performance_time(func):
     @wraps(func)

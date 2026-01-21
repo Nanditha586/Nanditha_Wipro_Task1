@@ -76,8 +76,9 @@ while True:
             print(f"{s1.name} > {s2.name} : {s1 > s2}")
 
         elif choice == "7":
-            generate_csv_report(students)
-            save_students_json(students)
+            role=input("Enter Role(admin/user)  : ").lower()
+            generate_csv_report(students,role=role)
+            save_students_json(students,role=role)
 
         elif choice == "8":
             for record in student_generator(students):
