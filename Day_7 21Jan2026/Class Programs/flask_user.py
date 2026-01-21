@@ -23,6 +23,13 @@ def get_user(user_id):
             return jsonify(user)
     return jsonify({"message": "user not found"}), 404
 
-
+@app.route("/users", methods=["Post"])
+def create_user():
+    data=request.json
+    new_user={
+        "id":len(users)+1,"name":data.get("name"),
+    }
+    users.append(new_user)
+    return jsonify(new_user),201
 if __name__ == "__main__":
     app.run(debug=True)
