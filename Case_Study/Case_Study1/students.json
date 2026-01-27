@@ -1,15 +1,28 @@
 [
   {
     "id": "101",
-    "name": "Nanditha",
+    "name": "Jack",
     "department": "CSE",
     "semester": 1,
     "marks": [
-      89,
+      78,
+      88,
+      98,
       90,
-      89,
+      87
+    ]
+  },
+  {
+    "id": "102",
+    "name": "James",
+    "department": "CSE",
+    "semester": 1,
+    "marks": [
       90,
-      78
+      78,
+      67,
+      90,
+      87
     ]
   }
 ]
